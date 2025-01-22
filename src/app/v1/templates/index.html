@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рекомендации Новостей</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 60px;
+            border-radius: 20px;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+            max-width: 700px;
+            width: 90%;
+            position: relative;
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .title {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: #4a235a;
+            letter-spacing: 1.2px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .recommend-button {
+            padding: 20px 40px;
+            font-size: 1.3em;
+            background: linear-gradient(to right, #793d8a, #a66fb5);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            outline: none;
+        }
+
+        .recommend-button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.4s ease;
+        }
+
+
+        .recommend-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+         .recommend-button:hover::before {
+            transform: translateX(0);
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 60%);
+            opacity: 0.7;
+            pointer-events: none;
+            z-index: -1;
+            animation: shine 5s linear infinite;
+        }
+
+        @keyframes shine {
+           0% { background-position: 0 0; }
+            100% { background-position: 200% 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Узнайте, что для вас интересно</h1>
+        <button class="recommend-button" onclick="redirectToNews()">Показать рекомендации</button>
+    </div>
+    <script>
+        function redirectToNews() {
+            window.location.href = '/v1/news/?id=0000023f507999464aa2b78875b7e5d6';
+        }
+    </script>
+</body>
+</html>

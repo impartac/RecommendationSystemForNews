@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ошибка 404 - Страница не найдена</title>
+    <style>
+      body {
+          font-family: 'Arial', sans-serif;
+          background-color: #f5f0f8;
+          color: #4a235a;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          margin: 0;
+      }
+
+      .error-container {
+          text-align: center;
+          background-color: #e0c1f2;
+          padding: 30px;
+          border-radius: 15px;
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+          max-width: 600px;
+          width: 90%;
+      }
+
+      .error-code {
+          font-size: 8em;
+          margin-bottom: 10px;
+          color: #6a3093;
+      }
+
+      .error-message {
+          font-size: 2em;
+          margin-bottom: 15px;
+      }
+
+      .error-details {
+          font-size: 1.2em;
+          margin-bottom: 25px;
+      }
+
+      .back-button {
+          display: inline-block;
+          padding: 10px 20px;
+          background-color: #9b59b6;
+          color: white;
+          text-decoration: none;
+          border-radius: 8px;
+          transition: background-color 0.3s ease;
+      }
+
+      .back-button:hover {
+          background-color: #8e44ad;
+      }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <h1 class="error-code">404</h1>
+        <p class="error-message">Страница не найдена</p>
+        <p class="error-details">Извините, запрошенная вами страница не существует.</p>
+        <a href="/v1/" class="back-button">Вернуться на главную</a>
+    </div>
+</body>
+</html>

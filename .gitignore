@@ -1,0 +1,11 @@
+venv/
+.idea/
+src/logs
+dev/.env
+db/migrations/0001_news_init.sql
+src/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+*.sql
