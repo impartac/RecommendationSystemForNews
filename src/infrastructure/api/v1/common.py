@@ -1,16 +1,8 @@
+from pathlib import Path
 
-import uvicorn
-from sqlalchemy.ext.asyncio import create_async_engine
-from infrastructure.api.app import app
+from fastapi.templating import Jinja2Templates
 
-
-if __name__ == "__main__":
-    uvicorn.run(
-        app,  # Формат "module:app"
-        host="localhost",
-        port=8001,
-        log_level="debug"
-    )
+templates = Jinja2Templates(directory=str(Path(__file__).parent / "templates"))
 
 # ░░░░░░░░░░░░░░░░░░░░
 # ░░░░░ЗАПУСКАЕМ░░░░░░░

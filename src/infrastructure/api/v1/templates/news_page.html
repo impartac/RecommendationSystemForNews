@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{  news.title }}</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #f0f0f8, #e0e0f0);
+            color: #000; /* Черный основной текст */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        main {
+            max-width: 900px;
+            width: 95%;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(-20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            color: #651fff;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            letter-spacing: 1.2px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #793d8a;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2em;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            line-height: 1.7;
+            margin-bottom: 25px;
+            text-align: justify;
+            padding: 25px;
+            background: linear-gradient(135deg, #e0e0f0, #f0f0f8);
+            border-radius: 12px;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.08);
+            transition: box-shadow 0.3s ease;
+            color: #000; /* Черный текст для параграфов */
+        }
+
+        p:hover {
+             box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15);
+        }
+
+
+        .recommendations {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .recommendation-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .recommendation-item {
+             background: linear-gradient(to right, #a66fb5, #d3a0ff);
+            padding: 20px;
+            border-radius: 12px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+            width: calc(45% - 20px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .recommendation-item:hover {
+             transform: scale(1.03);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+        }
+
+
+        .recommendation-item h3 {
+            color: white;
+            margin-top: 0;
+            margin-bottom: 10px;
+             /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);  Удалена тень */
+        }
+
+        .recommendation-item p {
+             color: #000; /* Черный текст в рекомендациях*/
+            font-size: 0.95em;
+            margin-bottom: 0;
+            background-color: inherit;
+            /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);  Удалена тень */
+        }
+
+
+        .recommendation-item a {
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+             color: #000; /* Черный цвет ссылок */
+        }
+
+        .recommendation-item a:hover {
+            text-decoration: none;
+           color: rgba(0, 0, 0, 0.7);  /* Черный цвет при наведении */
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>{{  news.title }}</h1>
+        <p>{{  news.body }}</p>
+
+        <div class="recommendations">
+            <h2>Рекомендации</h2>
+            <ul class="recommendation-list">
+                {% for rec in recommendations %}
+                    <li class="recommendation-item">
+                       <a href="/news?id={{ rec.id }}">
+                         <h3>{{ rec.title }}</h3>
+                         <p>{{ rec.anons }}</p>
+                        </a>
+                   </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </main>
+</body>
+</html>

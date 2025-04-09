@@ -1,11 +1,85 @@
+# Virtual environment
 venv/
+.venv/
+env/
+ENV/
+
+# IDE
 .idea/
-src/logs
-dev/.env
-db/migrations/0001_news_init.sql
-src/__pycache__/
-*.pyc
-*.pyo
+.vscode/
+*.swp
+*.swo
+
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
 *.pyd
+*.pyo
+*.so
+
+# Logs
 *.log
-*.sql
+logs/
+src/logs/
+
+# Environment files
+.env
+.dev.env
+*.env
+dev/.env
+
+# Database and migrations
+db/migrations/
+*.sqlite
+*.sqlite3
+
+# Machine learning models
+*.joblib
+*.pkl
+*.h5
+*.model
+
+# Custom directories
+infrastructure/knn/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+src/knn
