@@ -1,7 +1,6 @@
 from typing import Iterable, List
 
 import joblib
-import numpy
 import numpy as np
 import torch
 from sklearn.neighbors import NearestNeighbors
@@ -9,7 +8,6 @@ from sklearn.neighbors import NearestNeighbors
 from core.entities.abstractions.vector_entity_abs import VectorEntityABS
 from core.entities.abstractions.recommender_model_abs import RecommendationModelAbstraction
 from config.logger_config import logger
-import pandas as pd
 
 
 class KNN(RecommendationModelAbstraction):

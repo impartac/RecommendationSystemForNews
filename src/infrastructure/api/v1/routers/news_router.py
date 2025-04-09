@@ -1,6 +1,7 @@
 import http
+from typing import Union
 
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, HTTPException
 from fastapi.params import Query
 
 from infrastructure.db.factories.implementation.news_factory import NewsFactory
@@ -64,8 +65,10 @@ async def init_recs(
 async def get_news(
         id: str = Query(),
         use_case: NewsUseCase = Depends(get_news_use_case)
-) -> NewsResponse:
+):
     news = await use_case.get_news(id)
+    if not news:
+        raise HTTPException(status_code=404, detail="News not found")
     recs = await use_case.get_recommendation(news)
     return RecommendationResponse.from_orm({
         "news": news,
