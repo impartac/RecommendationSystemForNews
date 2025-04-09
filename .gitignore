@@ -29,7 +29,7 @@ src/logs/
 dev/.env
 
 # Database and migrations
-db/migrations/
+db/migrations/0001_news_init.sql
 *.sqlite
 *.sqlite3
 
